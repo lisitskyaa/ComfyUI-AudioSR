@@ -136,21 +136,21 @@ All Python dependencies are installed automatically. No external tools required.
 
 ## 📦 Installation
 
-### Method 1: ComfyUI Manager (Recommended)
+### ~~Method 1: ComfyUI Manager (Recommended)~~
 
-1. Open ComfyUI Manager
-2. Search for **"AudioSR"**
-3. Click **Install**
-4. Restart ComfyUI
+~~1. Open ComfyUI Manager~~
+~~2. Search for **"AudioSR"**~~
+~~3. Click **Install**~~
+~~4. Restart ComfyUI~~
 
-That's it! All dependencies are installed automatically.
+~~That's it! All dependencies are installed automatically.~~
 
 ### Method 2: Manual Installation
 
 **Standard Python:**
 ```bash
 cd ComfyUI/custom_nodes
-git clone https://github.com/Saganaki22/ComfyUI-AudioSR.git
+git clone https://github.com/lisitskyaa/ComfyUI-AudioSR.git
 cd ComfyUI-AudioSR
 pip install -r requirements.txt
 ```
@@ -158,7 +158,7 @@ pip install -r requirements.txt
 **ComfyUI Portable (Windows with embedded Python):**
 ```bash
 cd ComfyUI/custom_nodes
-git clone https://github.com/Saganaki22/ComfyUI-AudioSR
+git clone https://github.com/lisitskyaa/ComfyUI-AudioSR
 cd ComfyUI-AudioSR
 ..\python_embeded\python.exe -s -m pip install -r requirements.txt
 ```
