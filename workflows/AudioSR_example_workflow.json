@@ -1,0 +1,248 @@
+{
+  "id": "db47042b-a9fa-496a-a80c-a8bcfba3576e",
+  "revision": 0,
+  "last_node_id": 13,
+  "last_link_id": 30,
+  "nodes": [
+    {
+      "id": 8,
+      "type": "MarkdownNote",
+      "pos": [
+        -3142.177932975911,
+        6999.496659014705
+      ],
+      "size": [
+        405.3729182852294,
+        705.5237728270567
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "version": "7.5.2",
+          "input_ue_unconnectable": {}
+        }
+      },
+      "widgets_values": [
+        "# AudioSR - Quick Setup Guide\n\n## 📁 Model Folder Structure\n\nCreate this folder in your ComfyUI installation:\n\n```\nComfyUI/\n└── models/\n    └── AudioSR/\n        ├── audiosr_basic_fp32.safetensors\n        └── audiosr_speech_fp32.safetensors\n```\n\n## 📥 Download Models\n\n| Model | Download Link | Best For |\n|-------|---------------|----------|\n| Basic | [audiosr_basic_fp32.safetensors](https://huggingface.co/drbaph/AudioSR/resolve/main/AudioSR/audiosr_basic_fp32.safetensors) | Music, sound effects, general audio |\n| Speech | [audiosr_speech_fp32.safetensors](https://huggingface.co/drbaph/AudioSR/resolve/main/AudioSR/audiosr_speech_fp32.safetensors) | Voice, vocals, speech |\n\n**[→ View all models on HuggingFace](https://huggingface.co/drbaph/AudioSR/tree/main/AudioSR)**\n\n## 🎚️ Simple Workflow\n\n```\nLoad Audio → AudioSR → Preview Audio / Save Audio\n```\n\n## ⚙️ Recommended Settings\n\n| Setting | Value | Description |\n|---------|-------|-------------|\n| Steps | `50` | Quality vs speed (50 = good, 100 = best) |\n| Guidance | `3.5` | How faithful to input (3-5 is good range) |\n| Model | `speech` or `basic` | Choose based on your audio type |\n\n## 💻 Requirements\n\n- **GPU:** 6GB+ VRAM (8GB+ recommended)\n- **RAM:** 12GB+ recommended\n\n## 🔗 Links\n\n- [GitHub Repository](https://github.com/Saganaki22/ComfyUI-AudioSR)\n- [Models on HuggingFace](https://huggingface.co/drbaph/AudioSR/tree/main/AudioSR)\n- [Original Paper](https://arxiv.org/abs/2309.07314)\n"
+      ],
+      "color": "#c09430",
+      "bgcolor": "rgba(24,24,27,.9)"
+    },
+    {
+      "id": 5,
+      "type": "PreviewImage",
+      "pos": [
+        -2555.3660949653336,
+        7394.601744817516
+      ],
+      "size": [
+        591.9823916810274,
+        399.6900133817717
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 30
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.8.0",
+        "Node name for S&R": "PreviewImage",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 13,
+      "type": "AudioSR",
+      "pos": [
+        -2418.441917226369,
+        6999.153046672299
+      ],
+      "size": [
+        296.54723693731694,
+        347.2097958344766
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 28
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            29
+          ]
+        },
+        {
+          "name": "spectrogram",
+          "type": "IMAGE",
+          "links": [
+            30
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "ComfyUI-AudioSR",
+        "ver": "6571eb6067eefab07d8a4c85ac931a75ee335c88",
+        "Node name for S&R": "AudioSR"
+      },
+      "widgets_values": [
+        50,
+        3.5,
+        3702159433,
+        "randomize",
+        "audiosr_speech_fp32.safetensors",
+        15,
+        0,
+        false,
+        true,
+        "sageattn",
+        "bf16",
+        false
+      ]
+    },
+    {
+      "id": 4,
+      "type": "PreviewAudio",
+      "pos": [
+        -2098.0192070171515,
+        6995.717449202852
+      ],
+      "size": [
+        314.10588130878614,
+        137.92425901622846
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "link": 29
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.8.0",
+        "Node name for S&R": "PreviewAudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 3,
+      "type": "LoadAudio",
+      "pos": [
+        -2719.034313548648,
+        6997.201597505205
+      ],
+      "size": [
+        282.798828125,
+        136
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "AUDIO",
+          "type": "AUDIO",
+          "links": [
+            28
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.8.0",
+        "Node name for S&R": "LoadAudio",
+        "ue_properties": {
+          "widget_ue_connectable": {},
+          "input_ue_unconnectable": {},
+          "version": "7.5.2"
+        }
+      },
+      "widgets_values": [
+        "speech_up_4.wav",
+        null,
+        null
+      ]
+    }
+  ],
+  "links": [
+    [
+      28,
+      3,
+      0,
+      13,
+      0,
+      "AUDIO"
+    ],
+    [
+      29,
+      13,
+      0,
+      4,
+      0,
+      "AUDIO"
+    ],
+    [
+      30,
+      13,
+      1,
+      5,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "workflowRendererVersion": "LG",
+    "ue_links": [],
+    "ds": {
+      "scale": 0.8390545288824119,
+      "offset": [
+        3447.170569424816,
+        -6741.257873999632
+      ]
+    },
+    "links_added_by_ue": [],
+    "frontendVersion": "1.38.13",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
