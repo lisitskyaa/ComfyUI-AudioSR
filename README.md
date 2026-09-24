@@ -17,6 +17,10 @@
 
 <br>
 
+> This repository is a mirror/archive of the original ComfyUI AudioSR custom node.
+> The original repository is no longer available.
+> Original authorship and license are preserved.
+
 Native ComfyUI node for **AudioSR (Versatile Audio Super Resolution)** - Upscale any audio to 48kHz using state-of-the-art latent diffusion.
 
 **Based on the original AudioSR implementation by [Haohe Liu](https://github.com/haoheliu) et al.**
